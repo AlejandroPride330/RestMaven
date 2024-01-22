@@ -1,0 +1,19 @@
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <!-- Configuration of the database connection -->
+        <property name="connection.driver_class">org.mariadb.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mariadb://localhost:3306/dev</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">sonicblow</property>
+        
+        <property name="show sql">true</property>
+
+        <property name="hbm2ddl.auto">update</property> 
+        <!--puede ser: update, create, none, validate (update ve si la estructura esta bien y continua con ella, con create machaca la tabla)-->
+       <mapping class="Model.User" />
+        
+        
+    </session-factory>
+</hibernate-configuration>
